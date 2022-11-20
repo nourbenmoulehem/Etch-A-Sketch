@@ -4,9 +4,25 @@
 }
 
 .grid{
-  background-color: purple;
+  border: 1px solid black;
   display: grid;
   grid-template-columns: repeat(var(--grid-cols), 1fr);
-  grid-template-rows: repeat(var(--grid-rows), 50px);
+  grid-template-rows: repeat(var(--grid-rows), 1fr);
   
 }
+
+.grid-item{
+  height: 50px;
+  width: 50px;
+  margin: 0;
+  opacity: 0;
+  background: grey;
+  transition: opacity 2s ease 0.4s, transform 0.8s ease;
+}
+/*.grid-item:hover{
+  
+  opacity: 1;
+  transition: opacity 0.2s ease;
+  transform: scale(1.04);
+}*/
+
