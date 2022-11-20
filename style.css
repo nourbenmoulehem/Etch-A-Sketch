@@ -1,0 +1,12 @@
+:root{
+  --grid-cols: 1;
+  --grid-rows: 1;
+}
+
+.grid{
+  background-color: purple;
+  display: grid;
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+  grid-template-rows: repeat(var(--grid-rows), 50px);
+  
+}
