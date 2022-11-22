@@ -1,40 +1,18 @@
-:root{
-  --grid-cols: 1;
-  --grid-rows: 1;
-}
+
 
 .main{
   width: 30%;
   margin: 0px auto;
 }
 
-#range{
-  width: 100%;
-  margin: 20px auto;
-}
-
-#box{
-  width: 300px;
-  height: 300px;
-  background: red;
-  color: white;
-  text-align: center;
-  line-height: 300px;
-  border: 10px ;
-}
-
 .grid{
   border: 1px solid black;
   display: grid;
-   width: 500px;
+  width: 500px;
   height: 500px;
-  grid-template-columns: repeat(100, 1fr);
-  
 }
 
-.grid-element {
-  user-select: none;
-}
+
 /*.grid-item:hover{
   
   opacity: 1;
