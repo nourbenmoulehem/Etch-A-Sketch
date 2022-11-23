@@ -1,25 +1,32 @@
 const DEFAULT_SIZE = 16;
 const DEFAULT_COLOR = 'black';
+const DEFAULT_MODE = 'colore'
+
 
 let currentSize = DEFAULT_SIZE;
 let currentColor = DEFAULT_COLOR;
-let currentMode = 'colore'
+let currentMode = DEFAULT_MODE;
 
 
-
+//the main grid
 const grid = document.querySelector('.grid');
+
+// getting the size through the range input
 const sizeValue = document.getElementById('sizeValue') //div id
 const sizeSlider = document.getElementById('sizeSlider') //input id
 
+// getting the mode when clicked on a button
 const eraser = document.getElementById("eraser")
 const colore = document.getElementById('colore')
 const rainbow = document.getElementById('rainbow')
 
+//getting the color desired
 const color = document.getElementById('Colors')
 
-
+//deleting the grid
 const clear = document.getElementById('clear')
 
+//setting new values to current state
 function setCurrentColor(newColor){
   currentColor = newColor;
 }
@@ -28,6 +35,42 @@ function setCurrentMode(newMode){
   currentMode = newMode;
 }
 
+function setCurrentSize(newSize) {
+  currentSize = newSize
+}
+
+
+function updateSizeValue(value) {
+  sizeValue.innerHTML = `${value} x ${value}`
+}
+function Size(currentSize){
+  return currentSize * currentSize;
+}
+
+function changeSize(newSize){
+  setCurrentSize(newSize)
+  updateSizeValue(newSize)
+  reloadGrid(newSize);
+}
+
+
+
+function clearGrid() {
+  grid.innerHTML = ''
+}
+
+function reloadGrid(){
+  clearGrid()
+  gridSketch(currentSize)
+
+  
+}
+
+//hedhy o range yet7arek sxs tetbadel simultaneously
+sizeSlider.onmousemove = (e) => updateSizeValue(e.target.value)
+//hedhy wa9teli iwa9efh'ha o maatech iharekha
+sizeSlider.onchange = (e) => changeSize(e.target.value)
+
 clear.onclick = () => reloadGrid();
 
 color.oninput = () =>{
@@ -35,6 +78,7 @@ color.oninput = () =>{
   
 }
 
+//mode changed
 eraser.onclick = () => setCurrentMode("eraser")
 colore.onclick = () => setCurrentMode("colore")
 rainbow.onclick = () => setCurrentMode("rainbow")
@@ -55,48 +99,12 @@ function changeColor(e){
 
   }
   else if(currentMode === "eraser")
-  e.target.style.backgroundColor = "#000000"
+  e.target.style.backgroundColor = "#ffffff"
   }
   
-  // console.log(currentColor)
-
-
 /* ********************************************************* */
-function setCurrentSize(newSize) {
-  currentSize = newSize
-}
-
-function updateSizeValue(value) {
-  sizeValue.innerHTML = `${value} x ${value}`
-}
-function Size(currentSize){
-  return currentSize * currentSize;
-}
-
-function changeSize(newSize){
-  setCurrentSize(newSize)
-  updateSizeValue(newSize)
-  reloadGrid(newSize);
-  
-}
 
 
-
-function clearGrid() {
-  grid.innerHTML = ''
-}
-
-function reloadGrid(){
-  clearGrid()
-  gridSketch(currentSize)
-
-  
-}
-
-//hedhy o range yet7arek sxs tetbadel simultaneously
-sizeSlider.onmousemove = (e) => updateSizeValue(e.target.value)
-//hedhy wa9teli iwa9efh'ha o maatech iharekha
-sizeSlider.onchange = (e) => changeSize(e.target.value)
 
 
 

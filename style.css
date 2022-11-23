@@ -1,8 +1,25 @@
 
+.title{
+  text-align: center;
+}
 
-.main{
-  width: 30%;
-  margin: 0px auto;
+.flex-container{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 500px;
+  max-width: 1100px;
+  margin: 0 auto;
+ 
+}
+
+
+.flex-item1{
+  flex: 1;
+}
+
+.flex-item2{
+  flex: 1;
 }
 
 .grid{
