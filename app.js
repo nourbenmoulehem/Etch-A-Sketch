@@ -129,29 +129,3 @@ window.onload = () =>{
   gridSketch(DEFAULT_SIZE);
 }
 
-  
-
-/*let cells = [r*c];
-
-function createGrid(r, c){
-  grid.style.setProperty('--grid-rows', r);
-  grid.style.setProperty('--grid-cols', c);
-  for (let i = 0; i < (r * c); i++) {
-    let cell = document.createElement("div");
-    grid.appendChild(cell).className = "grid-item";
-    cell.innerText = "hi"
-    cells.push(cell);
-  };
-}
-
-console.log(sizeSlider)
-sizeSlider.onmousemove = (e) => updateSizeValue(e.target.value)
-
-createGrid(16, 16);
-/*for (let i = 0; i < (r * c); i++) {
-  console.log(i)
-  cells[i].addEventListener("click", function() {
-    console.log("you clicked region number ");
-  });
-
-}*/
