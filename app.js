@@ -1,6 +1,6 @@
 const DEFAULT_SIZE = 16;
 const DEFAULT_COLOR = 'black';
-const DEFAULT_MODE = 'colore'
+const DEFAULT_MODE = 'colore';
 
 
 let currentSize = DEFAULT_SIZE;
@@ -43,6 +43,7 @@ function setCurrentSize(newSize) {
 function updateSizeValue(value) {
   sizeValue.innerHTML = `${value} x ${value}`
 }
+
 function Size(currentSize){
   return currentSize * currentSize;
 }
@@ -73,8 +74,8 @@ sizeSlider.onchange = (e) => changeSize(e.target.value)
 
 clear.onclick = () => reloadGrid();
 
-color.oninput = () =>{
-  setCurrentColor(color.value);
+colors.oninput = () =>{
+  setCurrentColor(colors.value);
   
 }
 
